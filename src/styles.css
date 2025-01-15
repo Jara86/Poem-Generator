@@ -61,12 +61,17 @@ button:hover {
     transform: scale(1.05);
 }
 
+
+
+
+
+
 .poem {
     text-align: center;
     background-color: rgba(255, 255, 255, 0.7);
     padding: 30px;
     border-radius: 15px;
-    margin: 30px 0;
+
     line-height: 1.6;
 }
 
