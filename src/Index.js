@@ -4,7 +4,7 @@ function generatePoem(event) {
     let instructionsInput = document.querySelector("#topic");
     let apiKey = "ta004a4a3b736802do35c5853a06aff7";
     let prompt = `User instructions generate a poem ${instructionsInput.value}`;
-    let context = `You are a wise old wizard poet who loves to write short poems. Your mission is to generate a 4 line poem in basic HTML format. Make sure to follow the user instructions exactly.`;
+    let context = `You are a wise old magical poet who loves to write short poems. Your mission is to generate a 4 line poem in basic HTML format. Make sure to follow the user instructions exactly.`;
     let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
 
     let poemContainer = document.querySelector("#response-poem");
