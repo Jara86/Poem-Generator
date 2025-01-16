@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
@@ -14,6 +11,7 @@
 <body>
     <div class="container">
         <h1>AI Cheerful Poem Generator</h1>
+        
         <form id="poem-form">
             <input 
                 type="text" 
@@ -23,11 +21,13 @@
                 autocomplete="off" 
                 class="instructions">
             <button type="submit">Generate Poem</button>
+            <small class="instructions">
+                i.e: Flower, Sunset, Rain....
+            </small>
         </form>
 
-        <div id="response-poem" class="poem">
-        </div>
-
+        <div id="response-poem" class="poem"></div>
+      
         <footer>    
             This project was coded by
             <a href="#" target="_blank" class="footer-link">Jarouschka Buis</a> and is
@@ -39,3 +39,4 @@
     <script src="src/index.js"></script>
 </body>
 </html>
+

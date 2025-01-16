@@ -7,27 +7,31 @@ function generatePoem(event) {
     let context = `You are a wise old wizard poet who loves to write short poems. Your mission is to generate a 4 line poem in basic HTML format. Make sure to follow the user instructions exactly.`;
     let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
 
-    console.log("Generating poem...");
-    console.log(`Prompt: ${prompt}`);    
-    console.log(`Context: ${context}`);
-    
+    let poemContainer = document.querySelector("#response-poem");
+    poemContainer.innerHTML = "Generating your magical poem...";
+    poemContainer.classList.add("show");
+
     axios.get(apiUrl).then(displayPoem);
 }
 
 function displayPoem(response) {
     let cleanPoem = response.data.answer.replace(/'''html|```html/g, "").trim();
-    
-    let typewriter = new Typewriter("#response-poem", {
+    let poemContainer = document.querySelector("#response-poem");
+
+    let typewriter = new Typewriter(poemContainer, {
         strings: [cleanPoem],
-        autoStart: true,
+        autoStart: "false",
         delay: 100,
         cursor: "",
-        loop: false
+        loop: false,
     });
 
-    typewriter.start().callFunction(() => {
-        document.querySelector("#response-poem").innerHTML = cleanPoem;
-    });
+    // Nach Abschluss der Animation sicherstellen, dass der Text bleibt
+    typewriter.typeString(cleanPoem)
+        .start()
+        .callFunction(() => {
+            typewriter.stop(); // Stoppe die Animation
+        });
 }
 
 let poemFormElement = document.getElementById('poem-form');
