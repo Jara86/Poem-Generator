@@ -40,10 +40,20 @@ form {
 
 .instructions {
     width: 80%;
-    font-size: 18px;
+    font-size: 15px;
     padding: 15px;
     border-radius: 12px;
-    border: 2px solid #1c4336;
+    border: 1px solid #e0e0e0;
+    color: gray;
+    font-style: italic;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.instructions:focus {
+    outline: none;
+    border: 1px solid rgba(28, 67, 54, 0.3);
+    box-shadow: 0 0 5px rgba(28, 67, 54, 0.1);
 }
 
 button {
